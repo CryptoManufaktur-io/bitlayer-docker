@@ -59,6 +59,7 @@ services:
       - --history.transactions
       - "0"
     labels:
+      - traefik.enable=true
       - traefik.http.routers.${RPC_HOST:-bitlayer}.service=${RPC_HOST:-bitlayer}
       - traefik.http.routers.${RPC_HOST:-bitlayer}.entrypoints=websecure
       - traefik.http.routers.${RPC_HOST:-bitlayer}.rule=Host(`${RPC_HOST:-bitlayer}.${DOMAIN}`)
